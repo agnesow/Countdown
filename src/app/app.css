@@ -1,0 +1,128 @@
+#nc-logo {
+  position: absolute;
+  top: 20px;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 85vw;
+  max-width: 85vw;
+}
+
+.event-name {
+  text-align: center;
+  font-weight: 800;
+  color: #72035d;
+}
+
+.countdown-display {
+  width: 100%;
+}
+
+.countdown-text,
+.expired-message,
+.placeholder {
+  text-align: center;
+}
+
+.quote-section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  max-width: 60rem;
+}
+
+.quote {
+  font-size: 1.25rem;
+}
+
+.form-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 37.5rem;
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-group label {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.75rem;
+  font-size: 0.875rem;
+  background: #f5f3f3;
+  padding: 0 0.25rem;
+  z-index: 1;
+}
+
+.form-group input {
+  padding: 1.15rem;
+  border: 1px solid #757575;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: 'Open Sauce One', sans-serif;
+  background: #f5f3f3;
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.125rem rgba(117, 117, 117, 0.2);
+}
+
+@media (orientation: portrait) {
+  .form-container {
+    flex-direction: column;
+    gap: 2rem;
+    width: 85%;
+  }
+}
+
+@media (orientation: landscape) {
+  .form-container {
+    flex-direction: row;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  #nc-logo {
+    display: none;
+  }
+
+  .quote-section {
+    display: none;
+  }
+
+  .countdown-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown-container {
+    gap: 1.5rem;
+  }
+
+  .quote {
+    font-size: 1rem;
+  }
+
+  .form-group input {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-container {
+    gap: 1rem;
+  }
+}
