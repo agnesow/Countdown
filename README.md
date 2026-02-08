@@ -1,59 +1,47 @@
 # Countdown
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+A single-page countdown timer app built with Angular 21. Displays an auto-sizing event name, live countdown, and a random quote. Event data is persisted in localStorage.
 
-## Development server
+## Prerequisites
 
-To start a local development server, run:
+- Node.js (v18+)
+- npm
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Setup
 
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Development
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+Open [http://localhost:4200](http://localhost:4200) in your browser. The app will auto-reload on file changes.
 
-To build the project run:
+## Build
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Output will be in the `dist/` folder.
 
-## Running unit tests
+## Project Structure
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+src/app/
+  app.ts                       # Root component
+  app.html                     # Main template
+  app.css                      # Component styles
+  app.config.ts                # Angular config
+  directives/
+    text-fit.directive.ts      # Auto-sizing text directive
+  services/
+    storage.service.ts         # localStorage persistence
+    quote.service.ts           # Quote API service
+  models/
+    types.ts                   # TypeScript interfaces
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
