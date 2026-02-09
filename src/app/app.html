@@ -1,5 +1,5 @@
 <main class="countdown-container">
-  <img id="nc-logo" src="assets/logo_nc 1.svg" alt="Logo" height="50" width="180" />
+  <img id="nc-logo" src="assets/logo_nc.svg" alt="Logo" height="50" width="180" />
 
   <h1 class="event-name" appTextFit>
     {{ eventName() || 'No event set' }}
@@ -54,6 +54,7 @@
         type="date"
         [value]="eventDateString()"
         (input)="onDateChange($event)"
+        placeholder="YYYY-MM-DD"
         aria-label="Event date"
       />
     </div>

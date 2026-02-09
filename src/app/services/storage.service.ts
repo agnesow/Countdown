@@ -6,16 +6,16 @@ import { Injectable } from '@angular/core';
 export class StorageService {
   private readonly STORAGE_KEY = 'countdown-event';
 
-  saveEvent(name: string, date: Date): void {
+  saveEvent(name: string, date: Date | null): void {
     try {
-      const data = { name, date: date.toISOString() };
+      const data = { name, date: date ? date.toISOString() : null };
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
     } catch (error) {
       console.error('Failed to save event to localStorage:', error);
     }
   }
 
-  loadEvent(): { name: string; date: Date } | null {
+  loadEvent(): { name: string; date: Date | null } | null {
     try {
       const data = localStorage.getItem(this.STORAGE_KEY);
       if (!data) return null;
@@ -23,7 +23,7 @@ export class StorageService {
       const parsed = JSON.parse(data);
       return {
         name: parsed.name,
-        date: new Date(parsed.date),
+        date: parsed.date ? new Date(parsed.date) : null,
       };
     } catch (error) {
       console.error('Failed to load event from localStorage:', error);

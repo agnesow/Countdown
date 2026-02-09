@@ -44,8 +44,10 @@ export class App {
     effect(() => {
       const name = this.eventName();
       const date = this.eventDate();
-      if (name && date) {
+      if (name || date) {
         this.storageService.saveEvent(name, date);
+      } else {
+        this.storageService.clearEvent();
       }
     });
 
